@@ -1,56 +1,57 @@
 body {
-    margin: 0;
-    overflow: hidden;
-    background-color: #000;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fef4e4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.spiral-container {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
+#app {
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
 }
 
-.flower {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: radial-gradient(circle, pink, purple);
-    border-radius: 50%;
-    animation: spiral 10s infinite linear;
-    transform-origin: center;
-    opacity: 0.8;
+img, .gif {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
 
-@keyframes spiral {
-    0% {
-        transform: rotate(0deg) translateY(0) scale(0.5);
-        opacity: 1;
-    }
-    100% {
-        transform: rotate(720deg) translateY(-500px) scale(1.5);
-        opacity: 0;
-    }
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(45deg, #ff758c, #ff7eb3);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Diagonal Transition Effect */
-.diagonal-petal {
-    position: absolute;
-    width: 15px;
-    height: 60px;
-    background: linear-gradient(to bottom, pink, purple);
-    border-radius: 50%;
-    animation: diagonal-move 8s infinite ease-in-out;
-    opacity: 0.9;
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes diagonal-move {
-    0% {
-        transform: translate(-50vw, -50vh) rotate(45deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(50vw, 50vh) rotate(360deg);
-        opacity: 0;
-    }
+button.no-btn {
+  position: absolute;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation button {
+  flex: 1;
+  margin: 0 5px;
+}
+
+.hidden {
+  display: none;
 }
