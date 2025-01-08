@@ -1,29 +1,56 @@
 body {
     margin: 0;
     overflow: hidden;
-    background-color: #fff;
+    background-color: #000;
 }
-.flower-container {
+
+.spiral-container {
     width: 100vw;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
+    overflow: hidden;
 }
-.petal {
-    width: 20px;
-    height: 100px;
-    background: pink;
+
+.flower {
     position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, pink, purple);
     border-radius: 50%;
-    animation: spiral 5s infinite;
+    animation: spiral 10s infinite linear;
+    transform-origin: center;
+    opacity: 0.8;
 }
+
 @keyframes spiral {
     0% {
         transform: rotate(0deg) translateY(0) scale(0.5);
+        opacity: 1;
     }
     100% {
-        transform: rotate(360deg) translateY(-200px) scale(1);
+        transform: rotate(720deg) translateY(-500px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Diagonal Transition Effect */
+.diagonal-petal {
+    position: absolute;
+    width: 15px;
+    height: 60px;
+    background: linear-gradient(to bottom, pink, purple);
+    border-radius: 50%;
+    animation: diagonal-move 8s infinite ease-in-out;
+    opacity: 0.9;
+}
+
+@keyframes diagonal-move {
+    0% {
+        transform: translate(-50vw, -50vh) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(50vw, 50vh) rotate(360deg);
+        opacity: 0;
     }
 }
