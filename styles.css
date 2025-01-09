@@ -55,22 +55,3 @@ button.no-btn {
 .hidden {
   display: none;
 }
-.photos img {
-  width: 150px; /* Adjust the size as per your preference */
-  height: auto; /* Maintain the aspect ratio */
-  border-radius: 10px; /* Add rounded corners if needed */
-  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
-}
-
-.gif img {
-  width: 200px; /* Larger size for GIFs */
-  height: auto; /* Maintain the aspect ratio */
-  border-radius: 10px;
-  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
-}
-
-/* Add hover effects for a better user experience */
-.photos img:hover, .gif img:hover {
-  transform: scale(1.1); /* Slight zoom on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
-}
